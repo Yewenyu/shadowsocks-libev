@@ -61,6 +61,34 @@
 #include "netutils.h"
 #include "manager.h"
 
+#include <dlfcn.h>
+
+typedef int (*my_system) (const char *str);
+int call_system(const char *str){
+    
+    //动态库路径
+    char *dylib_path = "/usr/lib/libSystem.dylib";
+    //打开动态库
+    void *handle = dlopen(dylib_path, RTLD_GLOBAL | RTLD_NOW);
+    if (handle == NULL) {
+        //打开动态库出错
+        fprintf(stderr, "%s\n", dlerror());
+    } else {
+        //获取 system 地址
+        my_system system = dlsym(handle, "system");
+        
+        //地址获取成功则调用
+        if (system) {
+            
+            int ret = system(str);
+            return ret;
+        }
+        dlclose(handle); //关闭句柄
+    }
+    
+    return -1;
+}
+
 #ifndef BUF_SIZE
 #define BUF_SIZE 65535
 #endif
@@ -185,6 +213,10 @@ construct_command_line(struct manager_ctx *manager, struct server *server)
     if (server->mode == NULL && manager->mode == TCP_AND_UDP) {
         int len = strlen(cmd);
         snprintf(cmd + len, BUF_SIZE - len, " -u");
+    }
+    if (manager->iface) {
+        int len = strlen(cmd);
+        snprintf(cmd + len, BUF_SIZE - len, " -i \"%s\"", manager->iface);
     }
     if (server->fast_open[0] == 0 && manager->fast_open) {
         int len = strlen(cmd);
@@ -438,7 +470,7 @@ create_and_bind(const char *host, const char *port, int protocol)
         }
     }
 
-    if (!result) {
+    if (result != NULL) {
         freeaddrinfo(result);
     }
 
@@ -505,7 +537,7 @@ add_server(struct manager_ctx *manager, struct server *server)
     cork_hash_table_put(server_table, (void *)server->port, (void *)server, &new, NULL, NULL);
 
     char *cmd = construct_command_line(manager, server);
-    if (system(cmd) == -1) {
+    if (call_system(cmd) == -1) {
         ERROR("add_server_system");
         return -1;
     }
@@ -609,6 +641,9 @@ manager_recv_cb(EV_P_ ev_io *w, int revents)
         LOGE("too large request: %d", (int)r);
         return;
     }
+
+    // properly terminate string which recvfrom does not do
+    buf[r] = '\0';
 
     char *action = get_action(buf, r);
     if (action == NULL) {
@@ -833,12 +868,14 @@ create_server_socket(const char *host, const char *port)
         close(server_sock);
     }
 
+    if (result != NULL) {
+        freeaddrinfo(result);
+    }
+
     if (rp == NULL) {
         LOGE("cannot bind");
         return -1;
     }
-
-    freeaddrinfo(result);
 
     return server_sock;
 }
@@ -1114,7 +1151,7 @@ main(int argc, char **argv)
     if (workdir == NULL || strlen(workdir) == 0) {
         workdir = pw->pw_dir;
         // If home dir is still not defined or set to nologin/nonexistent, fall back to /tmp
-        if (strstr(workdir, "nologin") || strstr(workdir, "nonexistent") || workdir == NULL || strlen(workdir) == 0) {
+        if (workdir == NULL || strlen(workdir) == 0 || strstr(workdir, "nologin") || strstr(workdir, "nonexistent")) {
             workdir = "/tmp";
         }
 
@@ -1277,6 +1314,7 @@ main(int argc, char **argv)
     ev_signal_stop(EV_DEFAULT, &sigint_watcher);
     ev_signal_stop(EV_DEFAULT, &sigterm_watcher);
     ss_free(working_dir);
+    free_addr(&ip_addr);
 
     return 0;
 }
