@@ -43,7 +43,7 @@
 #endif
 
 #include "netutils.h"
-#include "utils.h"
+#include "utils_f.h"
 
 int
 protect_socket(int fd)

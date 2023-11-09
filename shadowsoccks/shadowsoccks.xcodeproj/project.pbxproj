@@ -306,6 +306,53 @@
 		F1A65BF02AFCD64600DAFD2B /* ecjpake.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A658712AFCD64500DAFD2B /* ecjpake.c */; };
 		F1A65BF12AFCD64600DAFD2B /* cipher.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A658722AFCD64500DAFD2B /* cipher.c */; };
 		F1A65BF22AFCD64600DAFD2B /* ecdsa.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A658732AFCD64500DAFD2B /* ecdsa.c */; };
+		F1A65CA52AFCD6B700DAFD2B /* json.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C732AFCD6B700DAFD2B /* json.c */; };
+		F1A65CA72AFCD6B700DAFD2B /* resolv.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C752AFCD6B700DAFD2B /* resolv.h */; };
+		F1A65CA82AFCD6B700DAFD2B /* winsock.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C762AFCD6B700DAFD2B /* winsock.h */; };
+		F1A65CA92AFCD6B700DAFD2B /* rule.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C772AFCD6B700DAFD2B /* rule.c */; };
+		F1A65CAB2AFCD6B700DAFD2B /* acl.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C792AFCD6B700DAFD2B /* acl.h */; };
+		F1A65CAC2AFCD6B700DAFD2B /* plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C7A2AFCD6B700DAFD2B /* plugin.h */; };
+		F1A65CAD2AFCD6B700DAFD2B /* aead.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C7B2AFCD6B700DAFD2B /* aead.c */; };
+		F1A65CAE2AFCD6B700DAFD2B /* ppbloom.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C7C2AFCD6B700DAFD2B /* ppbloom.c */; };
+		F1A65CAF2AFCD6B700DAFD2B /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C7D2AFCD6B700DAFD2B /* base64.h */; };
+		F1A65CB02AFCD6B700DAFD2B /* netutils.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C7E2AFCD6B700DAFD2B /* netutils.h */; };
+		F1A65CB12AFCD6B700DAFD2B /* local.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C7F2AFCD6B700DAFD2B /* local.c */; };
+		F1A65CB22AFCD6B700DAFD2B /* manager.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C802AFCD6B700DAFD2B /* manager.h */; };
+		F1A65CB32AFCD6B700DAFD2B /* tunnel.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C812AFCD6B700DAFD2B /* tunnel.h */; };
+		F1A65CB42AFCD6B700DAFD2B /* cache.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C822AFCD6B700DAFD2B /* cache.h */; };
+		F1A65CB62AFCD6B700DAFD2B /* android.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C842AFCD6B700DAFD2B /* android.c */; };
+		F1A65CB72AFCD6B700DAFD2B /* stream.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C852AFCD6B700DAFD2B /* stream.h */; };
+		F1A65CB82AFCD6B700DAFD2B /* uthash.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C862AFCD6B700DAFD2B /* uthash.h */; };
+		F1A65CB92AFCD6B700DAFD2B /* server.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C872AFCD6B700DAFD2B /* server.c */; };
+		F1A65CBA2AFCD6B700DAFD2B /* jconf.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C882AFCD6B700DAFD2B /* jconf.h */; };
+		F1A65CBB2AFCD6B700DAFD2B /* crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C892AFCD6B700DAFD2B /* crypto.h */; };
+		F1A65CBC2AFCD6B700DAFD2B /* udprelay.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C8A2AFCD6B700DAFD2B /* udprelay.c */; };
+		F1A65CBD2AFCD6B700DAFD2B /* winsock.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C8B2AFCD6B700DAFD2B /* winsock.c */; };
+		F1A65CBF2AFCD6B700DAFD2B /* resolv.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C8D2AFCD6B700DAFD2B /* resolv.c */; };
+		F1A65CC12AFCD6B700DAFD2B /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C8F2AFCD6B700DAFD2B /* common.h */; };
+		F1A65CC22AFCD6B700DAFD2B /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C902AFCD6B700DAFD2B /* json.h */; };
+		F1A65CC32AFCD6B700DAFD2B /* netutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C912AFCD6B700DAFD2B /* netutils.c */; };
+		F1A65CC42AFCD6B700DAFD2B /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C922AFCD6B700DAFD2B /* base64.c */; };
+		F1A65CC62AFCD6B700DAFD2B /* ppbloom.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C942AFCD6B700DAFD2B /* ppbloom.h */; };
+		F1A65CC72AFCD6B700DAFD2B /* aead.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C952AFCD6B700DAFD2B /* aead.h */; };
+		F1A65CC82AFCD6B700DAFD2B /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C962AFCD6B700DAFD2B /* plugin.c */; };
+		F1A65CC92AFCD6B700DAFD2B /* acl.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C972AFCD6B700DAFD2B /* acl.c */; };
+		F1A65CCA2AFCD6B700DAFD2B /* rule.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C982AFCD6B700DAFD2B /* rule.h */; };
+		F1A65CCB2AFCD6B700DAFD2B /* cache.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C992AFCD6B700DAFD2B /* cache.c */; };
+		F1A65CCC2AFCD6B700DAFD2B /* manager.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C9A2AFCD6B700DAFD2B /* manager.c */; };
+		F1A65CCD2AFCD6B700DAFD2B /* tunnel.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C9B2AFCD6B700DAFD2B /* tunnel.c */; };
+		F1A65CCE2AFCD6B700DAFD2B /* shadowsocks.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C9C2AFCD6B700DAFD2B /* shadowsocks.h */; };
+		F1A65CCF2AFCD6B700DAFD2B /* local.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65C9D2AFCD6B700DAFD2B /* local.h */; };
+		F1A65CD02AFCD6B700DAFD2B /* crypto.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C9E2AFCD6B700DAFD2B /* crypto.c */; };
+		F1A65CD12AFCD6B700DAFD2B /* jconf.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65C9F2AFCD6B700DAFD2B /* jconf.c */; };
+		F1A65CD22AFCD6B700DAFD2B /* server.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65CA02AFCD6B700DAFD2B /* server.h */; };
+		F1A65CD32AFCD6B700DAFD2B /* udprelay.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65CA12AFCD6B700DAFD2B /* udprelay.h */; };
+		F1A65CD42AFCD6B700DAFD2B /* socks5.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65CA22AFCD6B700DAFD2B /* socks5.h */; };
+		F1A65CD52AFCD6B700DAFD2B /* stream.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65CA32AFCD6B700DAFD2B /* stream.c */; };
+		F1A65CD92AFCD72900DAFD2B /* utils_f.c in Sources */ = {isa = PBXBuildFile; fileRef = F1A65CD72AFCD72900DAFD2B /* utils_f.c */; };
+		F1A65CDA2AFCD72900DAFD2B /* utils_f.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A65CD82AFCD72900DAFD2B /* utils_f.h */; };
+		F1A65CEB2AFCDC3600DAFD2B /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A65CE52AFCDC3600DAFD2B /* libcares.a */; };
+		F1A65FF12AFCDCD400DAFD2B /* libpcre.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A65FE92AFCDCD400DAFD2B /* libpcre.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -735,6 +782,64 @@
 		F1A658712AFCD64500DAFD2B /* ecjpake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ecjpake.c; sourceTree = "<group>"; };
 		F1A658722AFCD64500DAFD2B /* cipher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cipher.c; sourceTree = "<group>"; };
 		F1A658732AFCD64500DAFD2B /* ecdsa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ecdsa.c; sourceTree = "<group>"; };
+		F1A65C732AFCD6B700DAFD2B /* json.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = json.c; sourceTree = "<group>"; };
+		F1A65C752AFCD6B700DAFD2B /* resolv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resolv.h; sourceTree = "<group>"; };
+		F1A65C762AFCD6B700DAFD2B /* winsock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = winsock.h; sourceTree = "<group>"; };
+		F1A65C772AFCD6B700DAFD2B /* rule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rule.c; sourceTree = "<group>"; };
+		F1A65C792AFCD6B700DAFD2B /* acl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acl.h; sourceTree = "<group>"; };
+		F1A65C7A2AFCD6B700DAFD2B /* plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin.h; sourceTree = "<group>"; };
+		F1A65C7B2AFCD6B700DAFD2B /* aead.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aead.c; sourceTree = "<group>"; };
+		F1A65C7C2AFCD6B700DAFD2B /* ppbloom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ppbloom.c; sourceTree = "<group>"; };
+		F1A65C7D2AFCD6B700DAFD2B /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		F1A65C7E2AFCD6B700DAFD2B /* netutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = netutils.h; sourceTree = "<group>"; };
+		F1A65C7F2AFCD6B700DAFD2B /* local.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = local.c; sourceTree = "<group>"; };
+		F1A65C802AFCD6B700DAFD2B /* manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manager.h; sourceTree = "<group>"; };
+		F1A65C812AFCD6B700DAFD2B /* tunnel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tunnel.h; sourceTree = "<group>"; };
+		F1A65C822AFCD6B700DAFD2B /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
+		F1A65C842AFCD6B700DAFD2B /* android.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = android.c; sourceTree = "<group>"; };
+		F1A65C852AFCD6B700DAFD2B /* stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stream.h; sourceTree = "<group>"; };
+		F1A65C862AFCD6B700DAFD2B /* uthash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uthash.h; sourceTree = "<group>"; };
+		F1A65C872AFCD6B700DAFD2B /* server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = server.c; sourceTree = "<group>"; };
+		F1A65C882AFCD6B700DAFD2B /* jconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconf.h; sourceTree = "<group>"; };
+		F1A65C892AFCD6B700DAFD2B /* crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto.h; sourceTree = "<group>"; };
+		F1A65C8A2AFCD6B700DAFD2B /* udprelay.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udprelay.c; sourceTree = "<group>"; };
+		F1A65C8B2AFCD6B700DAFD2B /* winsock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = winsock.c; sourceTree = "<group>"; };
+		F1A65C8D2AFCD6B700DAFD2B /* resolv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resolv.c; sourceTree = "<group>"; };
+		F1A65C8F2AFCD6B700DAFD2B /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		F1A65C902AFCD6B700DAFD2B /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		F1A65C912AFCD6B700DAFD2B /* netutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = netutils.c; sourceTree = "<group>"; };
+		F1A65C922AFCD6B700DAFD2B /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		F1A65C942AFCD6B700DAFD2B /* ppbloom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ppbloom.h; sourceTree = "<group>"; };
+		F1A65C952AFCD6B700DAFD2B /* aead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aead.h; sourceTree = "<group>"; };
+		F1A65C962AFCD6B700DAFD2B /* plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin.c; sourceTree = "<group>"; };
+		F1A65C972AFCD6B700DAFD2B /* acl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = acl.c; sourceTree = "<group>"; };
+		F1A65C982AFCD6B700DAFD2B /* rule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rule.h; sourceTree = "<group>"; };
+		F1A65C992AFCD6B700DAFD2B /* cache.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cache.c; sourceTree = "<group>"; };
+		F1A65C9A2AFCD6B700DAFD2B /* manager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = manager.c; sourceTree = "<group>"; };
+		F1A65C9B2AFCD6B700DAFD2B /* tunnel.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tunnel.c; sourceTree = "<group>"; };
+		F1A65C9C2AFCD6B700DAFD2B /* shadowsocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shadowsocks.h; sourceTree = "<group>"; };
+		F1A65C9D2AFCD6B700DAFD2B /* local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = local.h; sourceTree = "<group>"; };
+		F1A65C9E2AFCD6B700DAFD2B /* crypto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypto.c; sourceTree = "<group>"; };
+		F1A65C9F2AFCD6B700DAFD2B /* jconf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jconf.c; sourceTree = "<group>"; };
+		F1A65CA02AFCD6B700DAFD2B /* server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
+		F1A65CA12AFCD6B700DAFD2B /* udprelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udprelay.h; sourceTree = "<group>"; };
+		F1A65CA22AFCD6B700DAFD2B /* socks5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = socks5.h; sourceTree = "<group>"; };
+		F1A65CA32AFCD6B700DAFD2B /* stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stream.c; sourceTree = "<group>"; };
+		F1A65CD72AFCD72900DAFD2B /* utils_f.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils_f.c; sourceTree = "<group>"; };
+		F1A65CD82AFCD72900DAFD2B /* utils_f.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils_f.h; sourceTree = "<group>"; };
+		F1A65CDF2AFCDC3600DAFD2B /* ares_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares_version.h; sourceTree = "<group>"; };
+		F1A65CE02AFCDC3600DAFD2B /* ares_build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares_build.h; sourceTree = "<group>"; };
+		F1A65CE12AFCDC3600DAFD2B /* ares.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares.h; sourceTree = "<group>"; };
+		F1A65CE22AFCDC3600DAFD2B /* ares_rules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares_rules.h; sourceTree = "<group>"; };
+		F1A65CE32AFCDC3600DAFD2B /* ares_dns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ares_dns.h; sourceTree = "<group>"; };
+		F1A65CE52AFCDC3600DAFD2B /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcares.a; sourceTree = "<group>"; };
+		F1A65FE92AFCDCD400DAFD2B /* libpcre.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpcre.a; sourceTree = "<group>"; };
+		F1A65FEB2AFCDCD400DAFD2B /* pcrecpparg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcrecpparg.h; sourceTree = "<group>"; };
+		F1A65FEC2AFCDCD400DAFD2B /* pcreposix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcreposix.h; sourceTree = "<group>"; };
+		F1A65FED2AFCDCD400DAFD2B /* pcre_scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcre_scanner.h; sourceTree = "<group>"; };
+		F1A65FEE2AFCDCD400DAFD2B /* pcre_stringpiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcre_stringpiece.h; sourceTree = "<group>"; };
+		F1A65FEF2AFCDCD400DAFD2B /* pcre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcre.h; sourceTree = "<group>"; };
+		F1A65FF02AFCDCD400DAFD2B /* pcrecpp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pcrecpp.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -742,6 +847,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A65CEB2AFCDC3600DAFD2B /* libcares.a in Frameworks */,
+				F1A65FF12AFCDCD400DAFD2B /* libpcre.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +874,9 @@
 		F1A640B72AFC79BE00DAFD2B /* shadowsoccks */ = {
 			isa = PBXGroup;
 			children = (
+				F1A65CEC2AFCDC8100DAFD2B /* pcre */,
+				F1A65CDD2AFCDC3600DAFD2B /* ares */,
+				F1A65C722AFCD6B700DAFD2B /* src */,
 				F1A655752AFCD64400DAFD2B /* mbedtls */,
 				F1A655292AFCD61D00DAFD2B /* libev */,
 				F1A646962AFC9BB500DAFD2B /* libsodium */,
@@ -2130,6 +2240,120 @@
 			path = library;
 			sourceTree = "<group>";
 		};
+		F1A65C722AFCD6B700DAFD2B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65C972AFCD6B700DAFD2B /* acl.c */,
+				F1A65C7B2AFCD6B700DAFD2B /* aead.c */,
+				F1A65C842AFCD6B700DAFD2B /* android.c */,
+				F1A65C922AFCD6B700DAFD2B /* base64.c */,
+				F1A65C992AFCD6B700DAFD2B /* cache.c */,
+				F1A65C9E2AFCD6B700DAFD2B /* crypto.c */,
+				F1A65C9F2AFCD6B700DAFD2B /* jconf.c */,
+				F1A65C732AFCD6B700DAFD2B /* json.c */,
+				F1A65C7F2AFCD6B700DAFD2B /* local.c */,
+				F1A65C9A2AFCD6B700DAFD2B /* manager.c */,
+				F1A65C912AFCD6B700DAFD2B /* netutils.c */,
+				F1A65C962AFCD6B700DAFD2B /* plugin.c */,
+				F1A65C7C2AFCD6B700DAFD2B /* ppbloom.c */,
+				F1A65C8D2AFCD6B700DAFD2B /* resolv.c */,
+				F1A65C772AFCD6B700DAFD2B /* rule.c */,
+				F1A65C872AFCD6B700DAFD2B /* server.c */,
+				F1A65CA32AFCD6B700DAFD2B /* stream.c */,
+				F1A65C9B2AFCD6B700DAFD2B /* tunnel.c */,
+				F1A65C8A2AFCD6B700DAFD2B /* udprelay.c */,
+				F1A65C8B2AFCD6B700DAFD2B /* winsock.c */,
+				F1A65C792AFCD6B700DAFD2B /* acl.h */,
+				F1A65C952AFCD6B700DAFD2B /* aead.h */,
+				F1A65C7D2AFCD6B700DAFD2B /* base64.h */,
+				F1A65C822AFCD6B700DAFD2B /* cache.h */,
+				F1A65C8F2AFCD6B700DAFD2B /* common.h */,
+				F1A65C892AFCD6B700DAFD2B /* crypto.h */,
+				F1A65C882AFCD6B700DAFD2B /* jconf.h */,
+				F1A65C902AFCD6B700DAFD2B /* json.h */,
+				F1A65C9D2AFCD6B700DAFD2B /* local.h */,
+				F1A65C802AFCD6B700DAFD2B /* manager.h */,
+				F1A65C7E2AFCD6B700DAFD2B /* netutils.h */,
+				F1A65C7A2AFCD6B700DAFD2B /* plugin.h */,
+				F1A65C942AFCD6B700DAFD2B /* ppbloom.h */,
+				F1A65C752AFCD6B700DAFD2B /* resolv.h */,
+				F1A65C982AFCD6B700DAFD2B /* rule.h */,
+				F1A65CA02AFCD6B700DAFD2B /* server.h */,
+				F1A65C9C2AFCD6B700DAFD2B /* shadowsocks.h */,
+				F1A65CA22AFCD6B700DAFD2B /* socks5.h */,
+				F1A65C852AFCD6B700DAFD2B /* stream.h */,
+				F1A65C812AFCD6B700DAFD2B /* tunnel.h */,
+				F1A65CA12AFCD6B700DAFD2B /* udprelay.h */,
+				F1A65C862AFCD6B700DAFD2B /* uthash.h */,
+				F1A65C762AFCD6B700DAFD2B /* winsock.h */,
+				F1A65CD72AFCD72900DAFD2B /* utils_f.c */,
+				F1A65CD82AFCD72900DAFD2B /* utils_f.h */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		F1A65CDD2AFCDC3600DAFD2B /* ares */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65CDE2AFCDC3600DAFD2B /* include */,
+				F1A65CE42AFCDC3600DAFD2B /* lib */,
+			);
+			name = ares;
+			path = ../../ares;
+			sourceTree = "<group>";
+		};
+		F1A65CDE2AFCDC3600DAFD2B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65CDF2AFCDC3600DAFD2B /* ares_version.h */,
+				F1A65CE02AFCDC3600DAFD2B /* ares_build.h */,
+				F1A65CE12AFCDC3600DAFD2B /* ares.h */,
+				F1A65CE22AFCDC3600DAFD2B /* ares_rules.h */,
+				F1A65CE32AFCDC3600DAFD2B /* ares_dns.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F1A65CE42AFCDC3600DAFD2B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65CE52AFCDC3600DAFD2B /* libcares.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		F1A65CEC2AFCDC8100DAFD2B /* pcre */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65FEA2AFCDCD400DAFD2B /* include */,
+				F1A65FE82AFCDCD400DAFD2B /* lib */,
+			);
+			name = pcre;
+			path = ../../pcre;
+			sourceTree = "<group>";
+		};
+		F1A65FE82AFCDCD400DAFD2B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65FE92AFCDCD400DAFD2B /* libpcre.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		F1A65FEA2AFCDCD400DAFD2B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F1A65FEB2AFCDCD400DAFD2B /* pcrecpparg.h */,
+				F1A65FEC2AFCDCD400DAFD2B /* pcreposix.h */,
+				F1A65FED2AFCDCD400DAFD2B /* pcre_scanner.h */,
+				F1A65FEE2AFCDCD400DAFD2B /* pcre_stringpiece.h */,
+				F1A65FEF2AFCDCD400DAFD2B /* pcre.h */,
+				F1A65FF02AFCDCD400DAFD2B /* pcrecpp.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -2148,19 +2372,28 @@
 				F1A648D32AFC9BB500DAFD2B /* constants.h in Headers */,
 				F1A648812AFC9BB500DAFD2B /* ladder_base.h in Headers */,
 				F1A648D02AFC9BB500DAFD2B /* fe.h in Headers */,
+				F1A65CB02AFCD6B700DAFD2B /* netutils.h in Headers */,
+				F1A65CBA2AFCD6B700DAFD2B /* jconf.h in Headers */,
 				F1A647EC2AFC9BB500DAFD2B /* blake2b-compress-avx2.h in Headers */,
+				F1A65CB42AFCD6B700DAFD2B /* cache.h in Headers */,
 				F1A648842AFC9BB500DAFD2B /* x25519_ref10.h in Headers */,
+				F1A65CB32AFCD6B700DAFD2B /* tunnel.h in Headers */,
 				F1A648B32AFC9BB500DAFD2B /* salsa20_xmm6int-avx2.h in Headers */,
+				F1A65CCF2AFCD6B700DAFD2B /* local.h in Headers */,
 				F1A6487D2AFC9BB500DAFD2B /* curve25519_sandy2x.h in Headers */,
+				F1A65CC72AFCD6B700DAFD2B /* aead.h in Headers */,
 				F1A648472AFC9BB500DAFD2B /* blamka-round-avx2.h in Headers */,
+				F1A65CB22AFCD6B700DAFD2B /* manager.h in Headers */,
 				F1A6484B2AFC9BB500DAFD2B /* argon2-encoding.h in Headers */,
 				F1A647EE2AFC9BB500DAFD2B /* blake2b-compress-sse41.h in Headers */,
 				F1A6556C2AFCD61D00DAFD2B /* ev.h in Headers */,
 				F1A644A12AFC919400DAFD2B /* murmurhash2.h in Headers */,
 				F1A6488C2AFC9BB500DAFD2B /* poly1305_sse2.h in Headers */,
 				F1A6484C2AFC9BB500DAFD2B /* blake2b-long.h in Headers */,
+				F1A65CAB2AFCD6B700DAFD2B /* acl.h in Headers */,
 				F1A6485C2AFC9BB500DAFD2B /* crypto_scrypt.h in Headers */,
 				F1A648A82AFC9BB500DAFD2B /* chacha20_dolbeau-avx2.h in Headers */,
+				F1A65CA82AFCD6B700DAFD2B /* winsock.h in Headers */,
 				F1A648532AFC9BB500DAFD2B /* argon2-core.h in Headers */,
 				F1A647E62AFC9BB500DAFD2B /* blake2b-load-avx2.h in Headers */,
 				F1A6488A2AFC9BB500DAFD2B /* poly1305_donna32.h in Headers */,
@@ -2169,8 +2402,12 @@
 				F1A6489F2AFC9BB500DAFD2B /* chacha20_ref.h in Headers */,
 				F1A647F62AFC9BB500DAFD2B /* sign_ed25519_ref10.h in Headers */,
 				F1A648872AFC9BB500DAFD2B /* poly1305_donna.h in Headers */,
+				F1A65CB82AFCD6B700DAFD2B /* uthash.h in Headers */,
+				F1A65CBB2AFCD6B700DAFD2B /* crypto.h in Headers */,
+				F1A65CB72AFCD6B700DAFD2B /* stream.h in Headers */,
 				F1A648B92AFC9BB500DAFD2B /* stream_salsa20.h in Headers */,
 				F1A648D22AFC9BB500DAFD2B /* base.h in Headers */,
+				F1A65CD22AFCD6B700DAFD2B /* server.h in Headers */,
 				F1A647E82AFC9BB500DAFD2B /* blake2.h in Headers */,
 				F1A648782AFC9BB500DAFD2B /* ladder_base_namespace.h in Headers */,
 				F1A648B52AFC9BB500DAFD2B /* salsa20_xmm6int-sse2.h in Headers */,
@@ -2180,24 +2417,35 @@
 				F1A6449C2AFC914C00DAFD2B /* bloom.h in Headers */,
 				F1A648712AFC9BB500DAFD2B /* consts_namespace.h in Headers */,
 				F1A648A12AFC9BB500DAFD2B /* stream_chacha20.h in Headers */,
+				F1A65CCA2AFCD6B700DAFD2B /* rule.h in Headers */,
 				F1A648A92AFC9BB500DAFD2B /* u8.h in Headers */,
 				F1A647EA2AFC9BB500DAFD2B /* blake2b-compress-ssse3.h in Headers */,
 				F1A6487B2AFC9BB500DAFD2B /* ladder.h in Headers */,
+				F1A65CAC2AFCD6B700DAFD2B /* plugin.h in Headers */,
 				F1A647EB2AFC9BB500DAFD2B /* blake2b-load-sse41.h in Headers */,
 				F1A6487C2AFC9BB500DAFD2B /* fe51.h in Headers */,
+				F1A65CD32AFCD6B700DAFD2B /* udprelay.h in Headers */,
 				F1A648492AFC9BB500DAFD2B /* argon2.h in Headers */,
 				F1A648A42AFC9BB500DAFD2B /* u4.h in Headers */,
 				F1A6485E2AFC9BB500DAFD2B /* pbkdf2-sha256.h in Headers */,
+				F1A65CAF2AFCD6B700DAFD2B /* base64.h in Headers */,
+				F1A65CDA2AFCD72900DAFD2B /* utils_f.h in Headers */,
 				F1A648A62AFC9BB500DAFD2B /* u0.h in Headers */,
+				F1A65CD42AFCD6B700DAFD2B /* socks5.h in Headers */,
 				F1A647E32AFC9BB500DAFD2B /* blake2b-load-sse2.h in Headers */,
 				F1A648B12AFC9BB500DAFD2B /* u0.h in Headers */,
 				F1A648462AFC9BB500DAFD2B /* blamka-round-ref.h in Headers */,
 				F1A648852AFC9BB500DAFD2B /* scalarmult_curve25519.h in Headers */,
 				F1A648D62AFC9BB500DAFD2B /* base.h in Headers */,
+				F1A65CC22AFCD6B700DAFD2B /* json.h in Headers */,
 				F1A648CF2AFC9BB500DAFD2B /* constants.h in Headers */,
+				F1A65CA72AFCD6B700DAFD2B /* resolv.h in Headers */,
+				F1A65CC12AFCD6B700DAFD2B /* common.h in Headers */,
 				F1A6484D2AFC9BB500DAFD2B /* blamka-round-avx512f.h in Headers */,
 				F1A648732AFC9BB500DAFD2B /* ladder_namespace.h in Headers */,
 				F1A6488E2AFC9BB500DAFD2B /* onetimeauth_poly1305.h in Headers */,
+				F1A65CC62AFCD6B700DAFD2B /* ppbloom.h in Headers */,
+				F1A65CCE2AFCD6B700DAFD2B /* shadowsocks.h in Headers */,
 				F1A6484A2AFC9BB500DAFD2B /* blamka-round-ssse3.h in Headers */,
 				F1A6486A2AFC9BB500DAFD2B /* shorthash_siphash_ref.h in Headers */,
 				F1A640B92AFC79BE00DAFD2B /* shadowsoccks.h in Headers */,
@@ -2298,9 +2546,12 @@
 				F1A65BBE2AFCD64600DAFD2B /* hmac_drbg.c in Sources */,
 				F1A6435B2AFC81C300DAFD2B /* ring-buffer.c in Sources */,
 				F1A646042AFC92C100DAFD2B /* ipv4_map.c in Sources */,
+				F1A65CAE2AFCD6B700DAFD2B /* ppbloom.c in Sources */,
 				F1A6434C2AFC81C300DAFD2B /* directory-walker.c in Sources */,
 				F1A648AD2AFC9BB500DAFD2B /* stream_salsa20.c in Sources */,
 				F1A648CA2AFC9BB500DAFD2B /* core_salsa_ref.c in Sources */,
+				F1A65CB12AFCD6B700DAFD2B /* local.c in Sources */,
+				F1A65CA52AFCD6B700DAFD2B /* json.c in Sources */,
 				F1A655612AFCD61D00DAFD2B /* ev.c in Sources */,
 				F1A65BCE2AFCD64600DAFD2B /* bignum.c in Sources */,
 				F1A65BD82AFCD64600DAFD2B /* error.c in Sources */,
@@ -2324,11 +2575,13 @@
 				F1A648482AFC9BB500DAFD2B /* argon2-core.c in Sources */,
 				F1A65BAF2AFCD64600DAFD2B /* pk_wrap.c in Sources */,
 				F1A65BE72AFCD64600DAFD2B /* xtea.c in Sources */,
+				F1A65CC42AFCD6B700DAFD2B /* base64.c in Sources */,
 				F1A65BCB2AFCD64600DAFD2B /* x509write_csr.c in Sources */,
 				F1A648792AFC9BB500DAFD2B /* ladder.S in Sources */,
 				F1A643502AFC81C300DAFD2B /* timestamp.c in Sources */,
 				F1A648522AFC9BB500DAFD2B /* pwhash_argon2id.c in Sources */,
 				F1A648742AFC9BB500DAFD2B /* fe51_nsquare.S in Sources */,
+				F1A65CD02AFCD6B700DAFD2B /* crypto.c in Sources */,
 				F1A647F32AFC9BB500DAFD2B /* sign_ed25519.c in Sources */,
 				F1A648942AFC9BB500DAFD2B /* crypto_box_seal.c in Sources */,
 				F1A648862AFC9BB500DAFD2B /* crypto_onetimeauth.c in Sources */,
@@ -2341,6 +2594,7 @@
 				F1A65BCF2AFCD64600DAFD2B /* pkparse.c in Sources */,
 				F1A648972AFC9BB500DAFD2B /* box_seal_curve25519xchacha20poly1305.c in Sources */,
 				F1A648602AFC9BB500DAFD2B /* verify.c in Sources */,
+				F1A65CBC2AFCD6B700DAFD2B /* udprelay.c in Sources */,
 				F1A65BB72AFCD64600DAFD2B /* ssl_cookie.c in Sources */,
 				F1A648632AFC9BB500DAFD2B /* crypto_auth.c in Sources */,
 				F1A65BB42AFCD64600DAFD2B /* x509_crl.c in Sources */,
@@ -2361,6 +2615,7 @@
 				F1A648702AFC9BB500DAFD2B /* sandy2x.S in Sources */,
 				F1A6434B2AFC81C300DAFD2B /* env.c in Sources */,
 				F1A648802AFC9BB500DAFD2B /* ladder_base.S in Sources */,
+				F1A65CC32AFCD6B700DAFD2B /* netutils.c in Sources */,
 				F1A65BC82AFCD64600DAFD2B /* ccm.c in Sources */,
 				F1A643512AFC81C300DAFD2B /* hash.c in Sources */,
 				F1A648612AFC9BB500DAFD2B /* auth_hmacsha512.c in Sources */,
@@ -2371,6 +2626,7 @@
 				F1A6487E2AFC9BB500DAFD2B /* fe51_invert.c in Sources */,
 				F1A643542AFC81C300DAFD2B /* u128.c in Sources */,
 				F1A648402AFC9BB500DAFD2B /* secretbox_xsalsa20poly1305.c in Sources */,
+				F1A65CC92AFCD6B700DAFD2B /* acl.c in Sources */,
 				F1A647F42AFC9BB500DAFD2B /* obsolete.c in Sources */,
 				F1A648CB2AFC9BB500DAFD2B /* core_hchacha20.c in Sources */,
 				F1A648C62AFC9BB500DAFD2B /* aead_xchacha20poly1305.c in Sources */,
@@ -2381,6 +2637,7 @@
 				F1A65BEC2AFCD64600DAFD2B /* entropy.c in Sources */,
 				F1A6460E2AFC92C100DAFD2B /* ipv4_set.c in Sources */,
 				F1A643562AFC81C300DAFD2B /* buffer.c in Sources */,
+				F1A65CCD2AFCD6B700DAFD2B /* tunnel.c in Sources */,
 				F1A65BC02AFCD64600DAFD2B /* ssl_ticket.c in Sources */,
 				F1A648642AFC9BB500DAFD2B /* auth_hmacsha256.c in Sources */,
 				F1A6485D2AFC9BB500DAFD2B /* pbkdf2-sha256.c in Sources */,
@@ -2391,6 +2648,7 @@
 				F1A6489E2AFC9BB500DAFD2B /* stream_xchacha20.c in Sources */,
 				F1A646052AFC92C100DAFD2B /* ipv6_map.c in Sources */,
 				F1A648822AFC9BB500DAFD2B /* scalarmult_curve25519.c in Sources */,
+				F1A65CD12AFCD6B700DAFD2B /* jconf.c in Sources */,
 				F1A648692AFC9BB500DAFD2B /* shorthash_siphash24_ref.c in Sources */,
 				F1A644A32AFC919E00DAFD2B /* MurmurHash2.c in Sources */,
 				F1A648892AFC9BB500DAFD2B /* poly1305_donna.c in Sources */,
@@ -2410,6 +2668,7 @@
 				F1A648592AFC9BB500DAFD2B /* pwhash_scryptsalsa208sha256_nosse.c in Sources */,
 				F1A648CE2AFC9BB500DAFD2B /* core_ed25519.c in Sources */,
 				F1A65BD52AFCD64600DAFD2B /* pem.c in Sources */,
+				F1A65CD92AFCD72900DAFD2B /* utils_f.c in Sources */,
 				F1A65BB62AFCD64600DAFD2B /* des.c in Sources */,
 				F1A647E22AFC9BB500DAFD2B /* blake2b-compress-ref.c in Sources */,
 				F1A65BE22AFCD64600DAFD2B /* sha256.c in Sources */,
@@ -2417,6 +2676,7 @@
 				F1A648BF2AFC9BB500DAFD2B /* stream_xsalsa20.c in Sources */,
 				F1A6434A2AFC81C300DAFD2B /* subprocess.c in Sources */,
 				F1A65BF22AFCD64600DAFD2B /* ecdsa.c in Sources */,
+				F1A65CA92AFCD6B700DAFD2B /* rule.c in Sources */,
 				F1A65BC72AFCD64600DAFD2B /* havege.c in Sources */,
 				F1A65BA92AFCD64600DAFD2B /* x509_create.c in Sources */,
 				F1A648562AFC9BB500DAFD2B /* argon2-encoding.c in Sources */,
@@ -2433,13 +2693,16 @@
 				F1A648902AFC9BB500DAFD2B /* randombytes_salsa20_random.c in Sources */,
 				F1A647F12AFC9BB500DAFD2B /* crypto_kx.c in Sources */,
 				F1A648932AFC9BB500DAFD2B /* crypto_box_easy.c in Sources */,
+				F1A65CAD2AFCD6B700DAFD2B /* aead.c in Sources */,
 				F1A648752AFC9BB500DAFD2B /* fe51_mul.S in Sources */,
 				F1A65BC52AFCD64600DAFD2B /* sha1.c in Sources */,
 				F1A65BDB2AFCD64600DAFD2B /* x509_csr.c in Sources */,
 				F1A648442AFC9BB500DAFD2B /* crypto_pwhash.c in Sources */,
+				F1A65CC82AFCD6B700DAFD2B /* plugin.c in Sources */,
 				F1A648722AFC9BB500DAFD2B /* fe_frombytes_sandy2x.c in Sources */,
 				F1A65BE32AFCD64600DAFD2B /* ecp_curves.c in Sources */,
 				F1A65BBF2AFCD64600DAFD2B /* rsa.c in Sources */,
+				F1A65CB62AFCD6B700DAFD2B /* android.c in Sources */,
 				F1A65BEF2AFCD64600DAFD2B /* md.c in Sources */,
 				F1A65BCA2AFCD64600DAFD2B /* entropy_poll.c in Sources */,
 				F1A6460B2AFC92C100DAFD2B /* read.c in Sources */,
@@ -2447,10 +2710,13 @@
 				F1A647E72AFC9BB500DAFD2B /* blake2b-compress-sse41.c in Sources */,
 				F1A648982AFC9BB500DAFD2B /* crypto_box.c in Sources */,
 				F1A6488B2AFC9BB500DAFD2B /* poly1305_sse2.c in Sources */,
+				F1A65CBD2AFCD6B700DAFD2B /* winsock.c in Sources */,
+				F1A65CBF2AFCD6B700DAFD2B /* resolv.c in Sources */,
 				F1A65BE82AFCD64600DAFD2B /* x509write_crt.c in Sources */,
 				F1A65BDA2AFCD64600DAFD2B /* md_wrap.c in Sources */,
 				F1A646082AFC92C100DAFD2B /* basics.c in Sources */,
 				F1A648B62AFC9BB500DAFD2B /* salsa20_xmm6-asm.S in Sources */,
+				F1A65CCC2AFCD6B700DAFD2B /* manager.c in Sources */,
 				F1A648672AFC9BB500DAFD2B /* crypto_shorthash.c in Sources */,
 				F1A648AA2AFC9BB500DAFD2B /* chacha20_dolbeau-ssse3.c in Sources */,
 				F1A648552AFC9BB500DAFD2B /* argon2-fill-block-avx2.c in Sources */,
@@ -2464,6 +2730,7 @@
 				F1A65BB22AFCD64600DAFD2B /* ecdh.c in Sources */,
 				F1A65BC42AFCD64600DAFD2B /* gcm.c in Sources */,
 				F1A65BB92AFCD64600DAFD2B /* aesni.c in Sources */,
+				F1A65CCB2AFCD6B700DAFD2B /* cache.c in Sources */,
 				F1A643532AFC81C300DAFD2B /* version.c in Sources */,
 				F1A6485A2AFC9BB500DAFD2B /* pwhash_scryptsalsa208sha256.c in Sources */,
 				F1A65BDC2AFCD64600DAFD2B /* pkcs11.c in Sources */,
@@ -2476,6 +2743,8 @@
 				F1A648662AFC9BB500DAFD2B /* crypto_kdf.c in Sources */,
 				F1A648952AFC9BB500DAFD2B /* box_curve25519xsalsa20poly1305.c in Sources */,
 				F1A648CC2AFC9BB500DAFD2B /* core_hsalsa20_ref2.c in Sources */,
+				F1A65CD52AFCD6B700DAFD2B /* stream.c in Sources */,
+				F1A65CB92AFCD6B700DAFD2B /* server.c in Sources */,
 				F1A6489A2AFC9BB500DAFD2B /* runtime.c in Sources */,
 				F1A65BE12AFCD64600DAFD2B /* x509.c in Sources */,
 				F1A6486E2AFC9BB500DAFD2B /* scalarmult_ed25519_ref10.c in Sources */,
@@ -2644,6 +2913,8 @@
 					"$(SRCROOT)/../libipset/include/**",
 					"$(SRCROOT)/../libsodium/include/**",
 					"$(SRCROOT)/../mbedtls/include/**",
+					"$(SRCROOT)/../ares/include/**",
+					"$(SRCROOT)/../pcre/include/**",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2687,6 +2958,8 @@
 					"$(SRCROOT)/../libipset/include/**",
 					"$(SRCROOT)/../libsodium/include/**",
 					"$(SRCROOT)/../mbedtls/include/**",
+					"$(SRCROOT)/../ares/include/**",
+					"$(SRCROOT)/../pcre/include/**",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

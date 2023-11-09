@@ -34,7 +34,7 @@
 
 #include "rule.h"
 #include "netutils.h"
-#include "utils.h"
+#include "utils_f.h"
 #include "cache.h"
 #include "acl.h"
 

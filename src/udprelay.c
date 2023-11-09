@@ -48,7 +48,7 @@
 
 #include <libcork/core.h>
 
-#include "utils.h"
+#include "utils_f.h"
 #include "netutils.h"
 #include "cache.h"
 #include "udprelay.h"

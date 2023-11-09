@@ -23,7 +23,7 @@
 #ifdef __MINGW32__
 
 #include "winsock.h"
-#include "utils.h"
+#include "utils_f.h"
 
 #ifndef ENABLE_QUICK_EDIT
 #define ENABLE_QUICK_EDIT 0x0040

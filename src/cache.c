@@ -33,7 +33,7 @@
 #include <stdlib.h>
 
 #include "cache.h"
-#include "utils.h"
+#include "utils_f.h"
 
 /** Creates a new cache object
  *

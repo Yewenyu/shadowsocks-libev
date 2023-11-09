@@ -35,7 +35,7 @@
 #include <libcork/core.h>
 #include <libcork/os.h>
 
-#include "utils.h"
+#include "utils_f.h"
 #include "plugin.h"
 #include "winsock.h"
 

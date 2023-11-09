@@ -49,7 +49,7 @@
 #include <libcork/core.h>
 
 #include "netutils.h"
-#include "utils.h"
+#include "utils_f.h"
 #include "plugin.h"
 #include "tunnel.h"
 #include "winsock.h"

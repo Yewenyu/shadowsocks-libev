@@ -33,11 +33,11 @@
 
 #include <libcork/ds.h>
 
-#ifdef HAVE_PCRE_H
+//#ifdef HAVE_PCRE_H
 #include <pcre.h>
-#elif HAVE_PCRE_PCRE_H
-#include <pcre/pcre.h>
-#endif
+//#elif HAVE_PCRE_PCRE_H
+//#include <pcre/pcre.h>
+//#endif
 
 typedef struct rule {
     char *pattern;
@@ -52,7 +52,7 @@ void add_rule(struct cork_dllist *, rule_t *);
 int init_rule(rule_t *);
 rule_t *lookup_rule(const struct cork_dllist *, const char *, size_t);
 void remove_rule(rule_t *);
-rule_t *new_rule();
+rule_t *new_rule(void);
 int accept_rule_arg(rule_t *, const char *);
 
 #endif

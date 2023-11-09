@@ -33,7 +33,7 @@
 
 #include "ppbloom.h"
 #include "stream.h"
-#include "utils.h"
+#include "utils_f.h"
 
 #define SODIUM_BLOCK_SIZE   64
 

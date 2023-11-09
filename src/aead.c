@@ -37,7 +37,7 @@
 
 #include "ppbloom.h"
 #include "aead.h"
-#include "utils.h"
+#include "utils_f.h"
 #include "winsock.h"
 
 #define NONE                    (-1)

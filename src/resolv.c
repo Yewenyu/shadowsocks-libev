@@ -52,7 +52,7 @@
 #include <libcork/core.h>
 
 #include "resolv.h"
-#include "utils.h"
+#include "utils_f.h"
 #include "netutils.h"
 
 #ifdef __MINGW32__

@@ -66,7 +66,7 @@ enum datatypes {
 #endif
 
 #include "netutils.h"
-#include "utils.h"
+#include "utils_f.h"
 #include "acl.h"
 #include "plugin.h"
 #include "server.h"

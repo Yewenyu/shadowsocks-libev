@@ -52,7 +52,7 @@
 #include <libcork/core.h>
 
 #include "netutils.h"
-#include "utils.h"
+#include "utils_f.h"
 #include "socks5.h"
 #include "acl.h"
 #include "plugin.h"

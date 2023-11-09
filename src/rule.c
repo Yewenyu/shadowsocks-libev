@@ -33,7 +33,8 @@
 #include <string.h>
 
 #include "rule.h"
-#include "utils.h"
+#include "utils_f.h"
+#include "pcre.h"
 
 static void free_rule(rule_t *);
 

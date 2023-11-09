@@ -25,7 +25,7 @@
 
 #include "bloom.h"
 #include "ppbloom.h"
-#include "utils.h"
+#include "utils_f.h"
 
 #define PING 0
 #define PONG 1
