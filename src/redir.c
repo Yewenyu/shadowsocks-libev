@@ -89,6 +89,10 @@ static void close_and_free_server(EV_P_ server_t *server);
 
 int verbose    = 0;
 int reuse_port = 0;
+int tcp_incoming_sndbuf = 0;
+int tcp_incoming_rcvbuf = 0;
+int tcp_outgoing_sndbuf = 0;
+int tcp_outgoing_rcvbuf = 0;
 
 static crypto_t *crypto;
 
@@ -143,7 +147,7 @@ create_and_bind(const char *addr, const char *port)
 {
     struct addrinfo hints;
     struct addrinfo *result, *rp;
-    int s, listen_sock;
+    int s, listen_sock = -1;
 
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family   = AF_UNSPEC;   /* Return IPv4 and IPv6 choices */
@@ -755,10 +759,22 @@ accept_cb(EV_P_ ev_io *w, int revents)
     setsockopt(serverfd, SOL_SOCKET, SO_NOSIGPIPE, &opt, sizeof(opt));
 #endif
 
+    if (tcp_incoming_sndbuf > 0) {
+        setsockopt(serverfd, SOL_SOCKET, SO_SNDBUF, &tcp_incoming_sndbuf, sizeof(int));
+    }
+
+    if (tcp_incoming_rcvbuf > 0) {
+        setsockopt(serverfd, SOL_SOCKET, SO_RCVBUF, &tcp_incoming_rcvbuf, sizeof(int));
+    }
+
     int index                    = rand() % listener->remote_num;
     struct sockaddr *remote_addr = listener->remote_addr[index];
 
-    int remotefd = socket(remote_addr->sa_family, SOCK_STREAM, IPPROTO_TCP);
+    int protocol = IPPROTO_TCP;
+    if (listener->mptcp < 0) {
+        protocol = IPPROTO_MPTCP; // Enable upstream MPTCP
+    }
+    int remotefd = socket(remote_addr->sa_family, SOCK_STREAM, protocol);
     if (remotefd == -1) {
         ERROR("socket");
         return;
@@ -788,17 +804,19 @@ accept_cb(EV_P_ ev_io *w, int revents)
         if (rc < 0 && errno != ENOPROTOOPT) {
             LOGE("setting ipv4 dscp failed: %d", errno);
         }
+#ifdef IPV6_TCLASS
         rc = setsockopt(remotefd, IPPROTO_IPV6, IPV6_TCLASS, &listener->tos, sizeof(listener->tos));
         if (rc < 0 && errno != ENOPROTOOPT) {
             LOGE("setting ipv6 dscp failed: %d", errno);
         }
+#endif
     }
 
-    // Enable MPTCP
+    // Enable out-of-tree MPTCP
     if (listener->mptcp > 1) {
         int err = setsockopt(remotefd, SOL_TCP, listener->mptcp, &opt, sizeof(opt));
         if (err == -1) {
-            ERROR("failed to enable multipath TCP");
+            ERROR("failed to enable out-of-tree multipath TCP");
         }
     } else if (listener->mptcp == 1) {
         int i = 0;
@@ -810,8 +828,16 @@ accept_cb(EV_P_ ev_io *w, int revents)
             i++;
         }
         if (listener->mptcp == 0) {
-            ERROR("failed to enable multipath TCP");
+            ERROR("failed to enable out-of-tree multipath TCP");
         }
+    }
+
+    if (tcp_outgoing_sndbuf > 0) {
+        setsockopt(remotefd, SOL_SOCKET, SO_SNDBUF, &tcp_outgoing_sndbuf, sizeof(int));
+    }
+
+    if (tcp_outgoing_rcvbuf > 0) {
+        setsockopt(remotefd, SOL_SOCKET, SO_RCVBUF, &tcp_outgoing_rcvbuf, sizeof(int));
     }
 
     server_t *server = new_server(serverfd);
@@ -903,6 +929,10 @@ main(int argc, char **argv)
         { "plugin",      required_argument, NULL, GETOPT_VAL_PLUGIN      },
         { "plugin-opts", required_argument, NULL, GETOPT_VAL_PLUGIN_OPTS },
         { "reuse-port",  no_argument,       NULL, GETOPT_VAL_REUSE_PORT  },
+        { "tcp-incoming-sndbuf", required_argument, NULL, GETOPT_VAL_TCP_INCOMING_SNDBUF },
+        { "tcp-incoming-rcvbuf", required_argument, NULL, GETOPT_VAL_TCP_INCOMING_RCVBUF },
+        { "tcp-outgoing-sndbuf", required_argument, NULL, GETOPT_VAL_TCP_OUTGOING_SNDBUF },
+        { "tcp-outgoing-rcvbuf", required_argument, NULL, GETOPT_VAL_TCP_OUTGOING_RCVBUF },
         { "no-delay",    no_argument,       NULL, GETOPT_VAL_NODELAY     },
         { "password",    required_argument, NULL, GETOPT_VAL_PASSWORD    },
         { "key",         required_argument, NULL, GETOPT_VAL_KEY         },
@@ -925,8 +955,9 @@ main(int argc, char **argv)
             LOGI("set MTU to %d", mtu);
             break;
         case GETOPT_VAL_MPTCP:
-            mptcp = 1;
-            LOGI("enable multipath TCP");
+            mptcp = get_mptcp(1);
+            if (mptcp)
+                LOGI("enable multipath TCP (%s)", mptcp > 0 ? "out-of-tree" : "upstream");
             break;
         case GETOPT_VAL_NODELAY:
             no_delay = 1;
@@ -943,6 +974,18 @@ main(int argc, char **argv)
             break;
         case GETOPT_VAL_REUSE_PORT:
             reuse_port = 1;
+            break;
+        case GETOPT_VAL_TCP_INCOMING_SNDBUF:
+            tcp_incoming_sndbuf = atoi(optarg);
+            break;
+        case GETOPT_VAL_TCP_INCOMING_RCVBUF:
+            tcp_incoming_rcvbuf = atoi(optarg);
+            break;
+        case GETOPT_VAL_TCP_OUTGOING_SNDBUF:
+            tcp_outgoing_sndbuf = atoi(optarg);
+            break;
+        case GETOPT_VAL_TCP_OUTGOING_RCVBUF:
+            tcp_outgoing_rcvbuf = atoi(optarg);
             break;
         case 's':
             if (remote_num < MAX_REMOTE_NUM) {
@@ -1079,6 +1122,18 @@ main(int argc, char **argv)
         if (reuse_port == 0) {
             reuse_port = conf->reuse_port;
         }
+        if (tcp_incoming_sndbuf == 0) {
+            tcp_incoming_sndbuf = conf->tcp_incoming_sndbuf;
+        }
+        if (tcp_incoming_rcvbuf == 0) {
+            tcp_incoming_rcvbuf = conf->tcp_incoming_rcvbuf;
+        }
+        if (tcp_outgoing_sndbuf == 0) {
+            tcp_outgoing_sndbuf = conf->tcp_outgoing_sndbuf;
+        }
+        if (tcp_outgoing_rcvbuf == 0) {
+            tcp_outgoing_rcvbuf = conf->tcp_outgoing_rcvbuf;
+        }
         if (fast_open == 0) {
             fast_open = conf->fast_open;
         }
@@ -1165,6 +1220,38 @@ main(int argc, char **argv)
 
     if (ipv6first) {
         LOGI("resolving hostname to IPv6 address first");
+    }
+
+    if (tcp_incoming_sndbuf != 0 && tcp_incoming_sndbuf < SOCKET_BUF_SIZE) {
+        tcp_incoming_sndbuf = 0;
+    }
+
+    if (tcp_incoming_sndbuf != 0) {
+        LOGI("set TCP incoming connection send buffer size to %d", tcp_incoming_sndbuf);
+    }
+
+    if (tcp_incoming_rcvbuf != 0 && tcp_incoming_rcvbuf < SOCKET_BUF_SIZE) {
+        tcp_incoming_rcvbuf = 0;
+    }
+
+    if (tcp_incoming_rcvbuf != 0) {
+        LOGI("set TCP incoming connection receive buffer size to %d", tcp_incoming_rcvbuf);
+    }
+
+    if (tcp_outgoing_sndbuf != 0 && tcp_outgoing_sndbuf < SOCKET_BUF_SIZE) {
+        tcp_outgoing_sndbuf = 0;
+    }
+
+    if (tcp_outgoing_sndbuf != 0) {
+        LOGI("set TCP outgoing connection send buffer size to %d", tcp_outgoing_sndbuf);
+    }
+
+    if (tcp_outgoing_rcvbuf != 0 && tcp_outgoing_rcvbuf < SOCKET_BUF_SIZE) {
+        tcp_outgoing_rcvbuf = 0;
+    }
+
+    if (tcp_outgoing_rcvbuf != 0) {
+        LOGI("set TCP outgoing connection receive buffer size to %d", tcp_outgoing_rcvbuf);
     }
 
     if (plugin != NULL) {
@@ -1298,6 +1385,10 @@ main(int argc, char **argv)
     if (plugin != NULL) {
         stop_plugin();
     }
+
+    for (i = 0; i < remote_num; i++)
+        ss_free(listen_ctx.remote_addr[i]);
+    ss_free(listen_ctx.remote_addr);
 
     return ret_val;
 }
